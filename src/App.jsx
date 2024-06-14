@@ -9,6 +9,8 @@ const App = () => {
   });
 
   useGSAP(()=> {
+
+    // gsap.to()
     gsap.to('#blue-box', {
       x: 250,
       repeat: -1,
@@ -16,6 +18,8 @@ const App = () => {
       ease: 'back.inOut',
       duration: 2
     });
+
+    // gsap.from()
     gsap.from('#red-box', {
       x: 250,
       repeat: -1,
@@ -24,6 +28,8 @@ const App = () => {
       ease: 'back.inOut',
       duration: 2
     });
+
+    // gsap.fromto()
     gsap.fromTo('#yellow-box', {
       x: 0,
       repeat: -1,
@@ -41,6 +47,8 @@ const App = () => {
       ease: 'back.inOut',
       duration: 2
     });
+
+    // gsap.timeline()
     timeline.to('#green-box', {
       x: 250,
       rotation: 360,
@@ -59,6 +67,11 @@ const App = () => {
       scale: 1,
       duration: 2
     })
+
+    // gsapstagger()
+    gsap.to('#violet-box', {
+      
+    })
   },[]);
 
   return (
@@ -73,8 +86,14 @@ const App = () => {
       <div className='h-40'>
         <div id='green-box' className='w-20 h-20 bg-green-500 rounded-lg'/>
       </div>
-      <h1>gsap.</h1>
-      <div id='violet-box' className='w-20 h-20 bg-violet-500 rounded-lg'/>
+      <h1>gsap.stagger</h1>
+      <div className='flex gap-5'>
+        <div id='violet-box' className='w-20 h-20 bg-violet-200 rounded-lg'/>
+        <div id='violet-box' className='w-20 h-20 bg-violet-300 rounded-lg'/>
+        <div id='violet-box' className='w-20 h-20 bg-violet-400 rounded-lg'/>
+        <div id='violet-box' className='w-20 h-20 bg-violet-500 rounded-lg'/>
+        <div id='violet-box' className='w-20 h-20 bg-violet-600 rounded-lg'/>
+      </div>
     </div>
   );
 };
